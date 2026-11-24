@@ -12,6 +12,9 @@ if sys.platform == "win32":
 from gpiozero import LED
 
 from color_detect import AWAL, deteksi
+DETEKTOR = os.environ.get("DETEKTOR", "hsv")
+if DETEKTOR == "yolo":
+    from yolo_detect import deteksi_yolo
 
 # ---- Pengaturan ----
 PIN = {"merah": 17, "hijau": 27, "biru": 22}   # nomor GPIO (BCM), sesuaikan dengan kabelmu
@@ -66,7 +69,10 @@ def main():
         frame = cv2.resize(frame, (640, int(t * 640 / l)))
         polos = frame.copy()          # salinan tanpa kotak, untuk dikirim ke website
 
-        hasil, _ = deteksi(frame, AWAL)
+        if DETEKTOR == "yolo":
+            hasil, _ = deteksi_yolo(frame)
+        else:
+            hasil, _ = deteksi(frame, AWAL)
 
         # Hitung kestabilan: naik kalau terlihat, reset ke 0 kalau hilang
         for nama in hitung:
