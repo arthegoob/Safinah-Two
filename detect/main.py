@@ -90,7 +90,10 @@ def main():
             x, y, w, h = cv2.boundingRect(k)
             cv2.rectangle(frame, (x, y), (x + w, y + h), WARNA[nama], 2)
             cv2.putText(frame, nama, (x, y - 8), cv2.FONT_HERSHEY_SIMPLEX, 0.8, WARNA[nama], 2)
-        cv2.imshow("Deteksi", frame)
+        if os.environ.get("HEADLESS") != "1":
+            cv2.imshow("Deteksi", frame)
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                break
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
