@@ -11,7 +11,7 @@ AWAL = {
     "Merah_atas": 7,
     "Merah_bawah": 175,
     "Hijau_min": 31,
-    "Hijau_max": 95,
+    "Hijau_max": 83,
     "Biru_min": 97,      # nilai awal tebakan, setel dengan slider
     "Biru_max": 130,
     "Kepekatan_min": 80,
