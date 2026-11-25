@@ -8,14 +8,14 @@ KEBULATAN_MINIMAL = 0.5   # bola: 1.0 = bulat sempurna
 KOTAK_MINIMAL = 0.8       # kotak: luas / luas persegi pembungkusnya (1.0 = persegi sempurna)
 
 AWAL = {
-    "Merah_atas": 10,
-    "Merah_bawah": 160,
+    "Merah_atas": 2,
+    "Merah_bawah": 175,
     "Hijau_min": 65,
     "Hijau_max": 95,
-    "Biru_min": 100,      # nilai awal tebakan, setel dengan slider
+    "Biru_min": 97,      # nilai awal tebakan, setel dengan slider
     "Biru_max": 130,
-    "Kepekatan_min": 40,
-    "Terang_min": 40,
+    "Kepekatan_min": 80,
+    "Terang_min": 80,
 }
 
 
