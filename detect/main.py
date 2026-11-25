@@ -18,7 +18,7 @@ if DETEKTOR == "yolo":
 
 # ---- Pengaturan ----
 PIN = {"merah": 17, "hijau": 27, "biru": 22}   # nomor GPIO (BCM), sesuaikan dengan kabelmu
-FRAME_STABIL = 5       # objek harus terlihat berturut-turut sekian frame (anti salah deteksi)
+FRAME_STABIL = 12  # objek harus terlihat berturut-turut sekian frame (anti salah deteksi)
 JEDA_UPLOAD = 5        # detik, jeda minimal antar upload
 UPLOAD_URL = os.environ.get("UPLOAD_URL", "")
 UPLOAD_KEY = os.environ.get("UPLOAD_KEY", "")
